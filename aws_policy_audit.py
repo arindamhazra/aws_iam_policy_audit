@@ -7,7 +7,8 @@ iam = session.client('iam')
 account_id = boto3.client('sts').get_caller_identity().get('Account')
 result = iam.simulate_principal_policy(
     PolicySourceArn="arn:aws:iam::"+account_id+":role/aws_network_admins",
-    ResourceArns=["*"],
-    ActionNames=["ec2:*"]
+    # ResourceArns=["*"],
+    ActionNames=["ec2:DescribeAccountAttributes"]
 )
+print(result)
 print(result.get('EvaluationResults',[]))
