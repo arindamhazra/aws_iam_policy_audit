@@ -63,8 +63,13 @@ except Exception as e:
 # All IAM Policies    
 try:
     allIamPolicies = iam_client.list_policies().get('Policies',[])
+    policyList = []
     for iamPolicy in allIamPolicies:
-        print(iamPolicy['PolicyName'])
+        policyData = {
+            'PolicyName': iamPolicy['PolicyName'],
+            'PolicyArn': iamPolicy['Arn']
+        }
+        policyList.append(policyData)
         
 except Exception as e:
     raise Exception("[ErrorMessage]: " + str(e))
