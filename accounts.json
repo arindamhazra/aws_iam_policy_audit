@@ -1,0 +1,16 @@
+{
+    "accounts": [
+        {
+            "name": "prod",
+            "id": "0"
+        },
+        {
+            "name": "qa",
+            "id": "0"
+        },
+        {
+            "name": "dev",
+            "id": "0"
+        }        
+    ]
+}
